@@ -23,6 +23,8 @@ import { AddQuestionComponent } from './add-question/add-question.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { QuestionsService } from './questions.service';
 import {FilterPipe} from './filter.pipe'
+import {MatTreeModule} from '@angular/material/tree';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,8 @@ import {FilterPipe} from './filter.pipe'
     MatIconModule,
     MatDialogModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatTreeModule
   ],
   providers: [MatNativeDateModule,QuestionsService],
   bootstrap: [AppComponent],

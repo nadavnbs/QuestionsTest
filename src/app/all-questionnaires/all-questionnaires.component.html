@@ -35,3 +35,37 @@
 
   </mat-expansion-panel>
 </mat-accordion> -->
+<mat-accordion>
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal questions
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+
+    </mat-expansion-panel-header>
+    <mat-card *ngFor="let question of questions;let idx = index">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{idx+1}}-{{question.headline}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-form-field *ngIf="question.questionType == 'explanation'">
+        <textarea matInput></textarea>
+      </mat-form-field>
+      <mat-radio-group *ngIf="question.questionType == 'single'">
+        <mat-radio-button value="true">male</mat-radio-button><br>
+        <mat-radio-button value="false">female</mat-radio-button>
+      </mat-radio-group>
+      <mat-radio-group *ngIf="question.questionType == 'date'">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-radio-group>
+    </mat-card>
+  </mat-expansion-panel>
+
+</mat-accordion>
