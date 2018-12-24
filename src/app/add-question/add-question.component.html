@@ -1,0 +1,13 @@
+<mat-form-field>
+  <input matInput placeholder="title" required [(ngModel)]="newQuestion.headline">
+</mat-form-field>
+<br>
+<mat-form-field>
+  <mat-select placeholder="Select" [(ngModel)]="newQuestion.questionType">
+    <mat-option value="single">single</mat-option>
+    <mat-option value="explanation">explanation</mat-option>
+    <mat-option value="date">date</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<button mat-raised-button color="primary" (click)="addNewQuestion()">Submit</button>
